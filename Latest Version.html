@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edge of Reality - The Ultimate Heist Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; font-family: 'Orbitron', sans-serif; background: #0e0e0e; color: #f5f5f5; overflow-x: hidden; }
+    header { position: relative; text-align: center; padding: 6rem 2rem 4rem; overflow: hidden; }
+    header video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+    header::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(14, 14, 14, 0.7); z-index: 0; }
+    .flash-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 0, 0, 0.5);
+      z-index: 9999;
+      display: none;
+    }
+    h1 { font-size: 3rem; margin-bottom: 1rem; position: relative; z-index: 1; }
+    p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; position: relative; z-index: 1; }
+    .cta-button { background: #ff3c00; color: #fff; padding: 1rem 2rem; font-size: 1.2rem; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 1rem; position: relative; z-index: 1; animation: flash 1.5s infinite alternate; }
+    .cta-button.disabled { background: grey; cursor: not-allowed; animation: none; }
+    .cta-button i { margin-right: 0.5rem; }
+    @keyframes flash {
+      from { opacity: 1; }
+      to { opacity: 0.6; }
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+    .shake { animation: shake 0.5s; }
+    .features { display: grid; gap: 2rem; padding: 2rem 2rem 1rem 2rem; max-width: 1000px; margin: auto; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .feature { background: #1a1a1a; padding: 2rem; border-radius: 12px; text-align: center; }
+    footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #888; }
+    .countdown { font-size: 1.5rem; margin-bottom: 1rem; color: #ff3c00; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      p { font-size: 1rem; }
+      .cta-button { padding: 0.8rem 1.5rem; font-size: 1rem; }
+      .features { padding: 2rem 1rem; }
+      .feature { padding: 1.5rem; }
+    }
+  </style>
+<style>
+  #countdown {
+    color: #ff3c00;
+    font-weight: 900;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+<div class="flash-overlay" id="flashOverlay"></div>
+<header id="pageHeader">
+<video autoplay="" loop="" muted="" playsinline="">
+<source src="heist-background.mp4" type="video/mp4"/>
+      Your browser does not support the video tag.
+    </video>
+<h1>Not an Escape Room. This Is a Bank Robbery.</h1>
+<p>Mask up. Grab the cash. Outsmart the system. Edge of Reality throws you into a high-stakes heist where it’s all or nothing.</p>
+<a class="cta-button" href="https://tally.so/r/your-form-link" id="joinButton" target="_blank"><i class="fas fa-bullhorn"></i>Secure Your Spot</a>
+<div class="countdown" id="countdown" style="font-size: 2.6rem; font-weight: 900; color: rgb(255, 0, 0); background-color: transparent; text-align: center; margin-top: 30px;">Only 7d 00h 00m 00s left to join!</div>
+</header>
+<section class="features">
+<div class="feature">
+<h2>Real Missions. Real Pressure.</h2>
+<p>Timed objectives. Locked rooms. No second chances. Every choice could make or break your crew.</p>
+</div>
+<div class="feature">
+<h2>Built Like a Blockbuster.</h2>
+<p>Every inch feels real — sirens, security systems, vault doors. You’re not acting. You’re reacting.</p>
+</div>
+<div class="feature">
+<h2>Total Immersion. Zero Escape Hints.</h2>
+<p>Custom-built environments, surveillance triggers, and high-stakes decisions. This isn’t a game. It’s a job.</p>
+</div>
+</section>
+<section style="padding: 2rem 2rem 1rem 2rem; text-align: center; background: #111;">
+<h2 style="font-size: 2rem; margin-bottom: 1rem;">What to Expect Inside</h2>
+<ul style="list-style: none; padding: 0; max-width: 700px; margin: auto; font-size: 1.1rem; line-height: 1.8;">
+<li>🧠 Briefing from your Heist Leader — follow the plan or fall apart</li>
+<li>💼 Your team enters an undisclosed location posing as elite robbers</li>
+<li>💸 Grab the cash. 🪙 Load the gold. 💎 Secure the diamonds</li>
+<li>🎯 The environment reacts to your every move — nothing is static</li>
+<li>⏱️ Stick to the timeline — or get locked in and left behind</li>
+<li>📊 Count your takings and see how your crew stacks up to the rest</li>
+</ul>
+</section>
+<footer>
+    © 2025 Edge of Reality. All rights reserved.
+  </footer>
+<script>
+    // Animate signup form on scroll
+    const signupSection = document.getElementById('signup');
+    const flashOverlay = document.getElementById('flashOverlay');
+    window.addEventListener('scroll', () => {
+      const rect = signupSection.getBoundingClientRect();
+      if (rect.top <= window.innerHeight - 100) {
+        signupSection.classList.add('visible');
+      }
+    });
+
+    // Countdown Timer
+    const countdown = document.getElementById('countdown');
+    const formButton = document.getElementById('formButton');
+    const joinButton = document.getElementById('joinButton');
+    const pageHeader = document.getElementById('pageHeader');
+
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 7); // 7 days from now
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdown.innerHTML = "Time's up!";
+        formButton.disabled = true;
+        formButton.textContent = "Closed";
+        formButton.classList.add('disabled');
+        joinButton.classList.add('disabled');
+        joinButton.href = "#";
+        joinButton.innerHTML = "Heist Closed";
+        pageHeader.classList.add('shake');
+        flashOverlay.style.display = 'block';
+        setTimeout(() => {
+          flashOverlay.style.display = 'none';
+        }, 500);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdown.innerHTML = `Only ${days}d ${hours}h ${minutes}m ${seconds}s left to join!`;
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
